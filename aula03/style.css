@@ -1,0 +1,140 @@
+/* Reset padrão de modelo de caixa */
+* {
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  margin: 0;
+  border: none;
+  padding: 30px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #0f172a; /* Fundo slate escuro elegante */
+  color: #1e293b;
+}
+
+/* Cabeçalho (Faixa Azul Escura / Ciano) */
+.cabecalho {
+  margin: 0;
+  border: 3px solid #0369a1;
+  padding: 30px;
+  background-color: #0c4a6e;
+  color: #f8fafc;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.cabecalho h1 {
+  margin: 10px;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.cabecalho p {
+  margin: 0;
+  font-size: 1rem;
+  color: #bae6fd;
+}
+
+/* Cartão Principal do Conteúdo */
+.conteudo {
+  margin-top: 25px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  border: 2px solid #38bdf8;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Seção Sobre */
+.sobre {
+  margin: 0;
+  border: 2px solid #7dd3fc;
+  padding: 20px;
+  background-color: #f0f9ff;
+  border-radius: 6px;
+  line-height: 1.6;
+}
+
+.sobre h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #0369a1;
+}
+
+.sobre p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Destaque no texto */
+.destaque {
+  color: #0284c7;
+  font-weight: 700;
+}
+
+/* Seção Habilidades */
+.habilidades {
+  margin-top: 25px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  border: 2px solid #bae6fd;
+  padding: 20px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+}
+
+.habilidades h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #0369a1;
+}
+
+.habilidades p {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #475569;
+}
+
+/* Container de tags com flexbox */
+.habilidades-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Etiquetas individuais */
+.habilidades span {
+  display: inline-block;
+  margin: 5px;
+  border: 2px solid #0284c7;
+  padding: 8px 14px;
+  background-color: #ffffff;
+  color: #0369a1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+/* Rodapé */
+.rodape {
+  margin-top: 25px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  border: none;
+  padding: 20px;
+  background-color: #020617;
+  color: #94a3b8;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.rodape p {
+  margin: 0;
+}

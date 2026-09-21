@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>As Duas Chamas — Dark Souls & Elden Ring</title>
+  <meta name="description" content="Uma homenagem interativa a Dark Souls e Elden Ring, os mundos da FromSoftware onde a morte é apenas o começo.">
+
+  <!-- Tipografia: Cinzel (títulos gravados em pedra) + EB Garamond (texto de lore) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- faíscas ambientes -->
+  <canvas id="embers" aria-hidden="true"></canvas>
+
+  <!-- NAVEGAÇÃO -->
+  <nav class="nav">
+    <div class="nav__mark">As Duas Chamas<small>Dark Souls · Elden Ring</small></div>
+    <div class="nav__links">
+      <a href="#chamas">As Duas Chamas</a>
+      <a href="#gates">Chefões</a>
+      <a href="#npcs">Lendas</a>
+      <a href="#rest">Descansar</a>
+      <a href="#heroes">Escolhidos</a>
+      <span class="nav__count">Fogueiras acesas: <b id="bonfireCount">0</b></span>
+    </div>
+  </nav>
+
+  <!-- HERÓI -->
+  <header class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="flame" aria-hidden="true">
+      <span class="flame__glow"></span>
+      <span class="flame__core"></span>
+    </div>
+    <p class="hero__kicker">FromSoftware</p>
+    <h1>Prepare-se para morrer<span class="amp">.</span></h1>
+    <p class="hero__sub">E então, erga-te. Uma homenagem interativa a <em>Dark Souls</em> e <em>Elden Ring</em> — os mundos onde a morte é apenas o começo.</p>
+    <button class="hero__cta" data-scroll="chamas">Acender a fogueira</button>
+    <span class="hero__scroll">Role para descer</span>
+  </header>
+
+  <!-- AS DUAS CHAMAS -->
+  <section class="section" id="chamas">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>As Duas Chamas</h2>
+        <p>Dois mundos, uma mesma verdade: toda luz um dia se apaga.</p>
+      </div>
+
+      <div class="flames">
+        <article class="flame-col flame-col--ds">
+          <h3>Dark Souls</h3>
+          <span class="year">2011 · Lordran</span>
+          <p>No início havia apenas névoa cinzenta e dragões eternos. Então surgiu a Primeira Chama, e com ela a diferença entre calor e frio, vida e morte, luz e escuridão.</p>
+          <p>Você desperta como um Morto-Vivo amaldiçoado, condenado a reviver a cada morte. Sua jornada por Lordran decide o destino de uma Era do Fogo que já se apaga.</p>
+          <ul class="stats">
+            <li><span>Mundo</span><span>Lordran</span></li>
+            <li><span>Moeda</span><span>Almas</span></li>
+            <li><span>Ponto de descanso</span><span>Fogueira</span></li>
+            <li><span>Ao morrer</span><span>YOU DIED</span></li>
+          </ul>
+        </article>
+
+        <div class="flames__divider" aria-hidden="true"></div>
+
+        <article class="flame-col flame-col--er">
+          <h3>Elden Ring</h3>
+          <span class="year">2022 · Terras Intermédias</span>
+          <p>A Árvore Dourada iluminava as Terras Intermédias sob o Anel Prístino. Até que o anel foi estilhaçado e seus fragmentos, as Grandes Runas, corromperam os semideuses que os tomaram.</p>
+          <p>Você é um Maculado, chamado de volta pela guia da graça para recompor o Anel e tornar-se Senhor Prístino. As ruínas douradas guardam bestas que já foram deuses.</p>
+          <ul class="stats">
+            <li><span>Mundo</span><span>Terras Intermédias</span></li>
+            <li><span>Moeda</span><span>Runas</span></li>
+            <li><span>Ponto de descanso</span><span>Sítio de Graça</span></li>
+            <li><span>Ao morrer</span><span>YOU DIED</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- PORTÕES DE NÉVOA -->
+  <section class="section section--dark" id="gates">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>Portões de Névoa</h2>
+        <p>Atravesse a névoa para enfrentar o que aguarda. Clique em cada portão.</p>
+      </div>
+
+      <!-- Chefões de Dark Souls -->
+      <div class="gate-group">
+        <h3 class="group-title group-title--ds">Dark Souls</h3>
+        <div class="gates gates--3">
+
+          <!-- Gwyn -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Gwyn">
+            <img class="gate__art" src="assets/bosses-ds/gwyn.webp" alt="Gwyn, Senhor da Cinza, em pé com a coroa de espinhos e as mãos apoiadas no cabo de uma grande espada" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game ds">Dark Souls</p>
+              <h4 class="gate__name">Gwyn</h4>
+              <p class="gate__title">Senhor da Cinza</p>
+              <p class="gate__desc">O último dos deuses, que ligou a própria alma à Primeira Chama para adiar o fim. Do rei restou só um eco em brasas, ainda furioso.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Lendário</b></span>
+                <span class="gate__runes">70.000<small>Almas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Artorias -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Artorias">
+            <img class="gate__art" src="assets/bosses-ds/artorias.webp" alt="Artorias, o Caminhante do Abismo, de armadura escura com manto azul e uma enorme espada apoiada no ombro" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game ds">Dark Souls</p>
+              <h4 class="gate__name">Artorias</h4>
+              <p class="gate__title">O Caminhante do Abismo</p>
+              <p class="gate__desc">Cavaleiro de Gwyn que mergulhou no Abismo para salvar Oolacile e foi consumido por ele. Mesmo quebrado, ainda é temível.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Alto</b></span>
+                <span class="gate__runes">50.000<small>Almas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Ornstein e Smough -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Ornstein e Smough">
+            <img class="gate__art" src="assets/bosses-ds/ornstein-smough.webp" alt="Ornstein, o lanceiro dourado em pleno salto, ao lado do colossal Smough com seu martelo gigante" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game ds">Dark Souls</p>
+              <h4 class="gate__name">Ornstein &amp; Smough</h4>
+              <p class="gate__title">Guardiões de Anor Londo</p>
+              <p class="gate__desc">O lanceiro-relâmpago e o carrasco colossal, juntos: derrote um e o outro absorve seu poder.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Extremo</b></span>
+                <span class="gate__runes">50.000<small>Almas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Priscilla -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Priscilla">
+            <img class="gate__art" src="assets/bosses-ds/priscilla.webp" alt="Priscilla, a Mestiça, de cabelos e pelagem brancos, segurando uma longa foice" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game ds">Dark Souls</p>
+              <h4 class="gate__name">Priscilla</h4>
+              <p class="gate__title">A Mestiça</p>
+              <p class="gate__desc">Meio dragão, meio humana, vive escondida no Mundo Pintado de Ariamis. Prefere a paz, mas defende seu refúgio com uma foice.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Moderado</b></span>
+                <span class="gate__runes">30.000<small>Almas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Sif -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Sif">
+            <img class="gate__art" src="assets/bosses-ds/sif.webp" alt="O Grande Lobo Cinzento Sif, de pelagem clara, com a longa espada de Artorias presa entre os dentes" width="508" height="635" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game ds">Dark Souls</p>
+              <h4 class="gate__name">Sif</h4>
+              <p class="gate__title">O Grande Lobo Cinzento</p>
+              <p class="gate__desc">Fiel guardião do túmulo de Artorias, luta mancando, com a espada do cavaleiro presa entre os dentes.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Alto</b></span>
+                <span class="gate__runes">40.000<small>Almas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Manus -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Manus">
+            <img class="gate__art" src="assets/bosses-ds/manus.webp" alt="Manus, Pai do Abismo, criatura de chifres prateados e olhos vermelhos brilhando na escuridão" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game ds">Dark Souls</p>
+              <h4 class="gate__name">Manus</h4>
+              <p class="gate__title">Pai do Abismo</p>
+              <p class="gate__desc">Encontrou a Alma Sombria e mergulhou Oolacile nas trevas. O que resta dele é só desespero e escuridão.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Extremo</b></span>
+                <span class="gate__runes">60.000<small>Almas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Chefões de Elden Ring -->
+      <div class="gate-group">
+        <h3 class="group-title group-title--er">Elden Ring</h3>
+        <div class="gates gates--4">
+
+          <!-- Midra -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Midra">
+            <img class="gate__art" src="assets/bosses-er/frenzied-flame.webp" alt="Midra, Lorde da Chama Frenética, com a cabeça em chamas e trapos amarelos, empunhando uma espada gigante" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game er">Elden Ring</p>
+              <h4 class="gate__name">Midra</h4>
+              <p class="gate__title">Lorde da Chama Frenética</p>
+              <p class="gate__desc">Consumido pela Chama Frenética, o fogo que devora a razão e desfaz toda ordem em delírio.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Extremo</b></span>
+                <span class="gate__runes">410.000<small>Runas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Malenia -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Malenia">
+            <img class="gate__art" src="assets/bosses-er/malenia.webp" alt="Malenia, Lâmina de Miquella, de elmo alado, cabelos ruivos e ombreiras douradas contra um céu de pôr do sol" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game er">Elden Ring</p>
+              <h4 class="gate__name">Malenia</h4>
+              <p class="gate__title">Lâmina de Miquella</p>
+              <p class="gate__desc">Nunca conheceu a derrota, mesmo com a Podridão Escarlate consumindo o corpo. Sua Dança das Aves d'Água virou lenda.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Lendário</b></span>
+                <span class="gate__runes">480.000<small>Runas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Radahn Consorte -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Radahn Consorte">
+            <img class="gate__art" src="assets/bosses-er/consort-radahn.webp" alt="Radahn, o Consorte Prometido, com máscara dourada sobre um corpo em brasa vermelha" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game er">Elden Ring</p>
+              <h4 class="gate__name">Radahn Consorte</h4>
+              <p class="gate__title">O Consorte Prometido</p>
+              <p class="gate__desc">Com a sanidade restaurada por Miquella, o Flagelo dos Astros retorna ainda mais colossal.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Lendário</b></span>
+                <span class="gate__runes">500.000<small>Runas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Godfrey ou Hoarah Loux -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Godfrey ou Hoarah Loux">
+            <img class="gate__art" src="assets/bosses-er/godfrey.webp" alt="Godfrey, o Primeiro Lorde Prístino, de armadura e machado, diante de uma silhueta espectral de leão" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game er">Elden Ring</p>
+              <h4 class="gate__name">Godfrey / Hoarah Loux</h4>
+              <p class="gate__title">Primeiro Lorde Prístino</p>
+              <p class="gate__desc">Banido como Maculado, volta a lutar como Hoarah Loux — e a arena vira um ringue.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Alto</b></span>
+                <span class="gate__runes">300.000<small>Runas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Morgott -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Morgott">
+            <img class="gate__art" src="assets/bosses-er/morgott.webp" alt="Morgott, o Rei Agouro, encurvado em um manto esfarrapado, com chifres e uma bengala" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game er">Elden Ring</p>
+              <h4 class="gate__name">Morgott</h4>
+              <p class="gate__title">O Rei Agouro</p>
+              <p class="gate__desc">Rei dos Agouros, guarda a Cidade Real de Leyndell com a fúria de quem nunca foi amado.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Alto</b></span>
+                <span class="gate__runes">120.000<small>Runas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Messmer -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Messmer">
+            <img class="gate__art" src="assets/bosses-er/messmer.webp" alt="Messmer, o Empalador, de cabelos e olhos flamejantes, com uma das mãos erguidas envolta em fogo" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game er">Elden Ring</p>
+              <h4 class="gate__name">Messmer</h4>
+              <p class="gate__title">O Empalador</p>
+              <p class="gate__desc">Filho de Marika que incendiou a Terra das Sombras com sua lança e seu fogo-serpente.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Extremo</b></span>
+                <span class="gate__runes">400.000<small>Runas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Bayle -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Bayle">
+            <img class="gate__art" src="assets/bosses-er/bayle.webp" alt="Bayle, o Pavoroso, dragão ancião de escamas em brasa, curvado sobre um campo de folhas vermelhas" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game er">Elden Ring</p>
+              <h4 class="gate__name">Bayle</h4>
+              <p class="gate__title">O Pavoroso</p>
+              <p class="gate__desc">Dragão ancião da Terra das Sombras, de bramido devastador e fúria em chamas e trovões.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Extremo</b></span>
+                <span class="gate__runes">490.000<small>Runas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+          <!-- Radagon -->
+          <article class="gate" tabindex="0" role="button" aria-label="Revelar chefão Radagon">
+            <img class="gate__art" src="assets/bosses-er/radagon.webp" alt="Radagon da Ordem Dourada, de costas e com o martelo erguido, com o símbolo dourado do Anel Prístino brilhando nas costas" width="720" height="900" loading="lazy" decoding="async">
+            <div class="gate__body">
+              <p class="gate__game er">Elden Ring</p>
+              <h4 class="gate__name">Radagon</h4>
+              <p class="gate__title">da Ordem Dourada</p>
+              <p class="gate__desc">Marido de Rennala e consorte de Marika: dois nomes para o mesmo ser, que empunha o martelo da Ordem Dourada.</p>
+              <div class="gate__meta">
+                <span class="gate__peril">Perigo<b>Extremo</b></span>
+                <span class="gate__runes">500.000<small>Runas</small></span>
+              </div>
+            </div>
+            <div class="gate__mist">
+              <span class="fog-glyph" aria-hidden="true">✦</span>
+              <span class="fog-label">Portão de Névoa</span>
+              <span class="fog-hint">clique para atravessar</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- COMPANHEIROS E LENDAS (NPCs) -->
+  <section class="section" id="npcs">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>Companheiros e Lendas</h2>
+        <p>Nem todo rosto no caminho é inimigo. Aliados e almas que tornam a jornada suportável.</p>
+      </div>
+
+      <div class="npc-group">
+        <h3 class="group-title group-title--ds">Dark Souls</h3>
+        <div class="npcs">
+
+          <article class="npc">
+            <div class="npc__frame">
+              <img class="npc__img" src="assets/npcs-ds/siegmeyer.webp" alt="Siegmeyer de Catarina, em close, com sua característica armadura em forma de cebola" width="720" height="900" loading="lazy" decoding="async">
+            </div>
+            <div class="npc__body">
+              <p class="npc__game ds">Dark Souls</p>
+              <h4 class="npc__name">Siegmeyer de Catarina</h4>
+              <p class="npc__role">O Cebolão</p>
+              <p class="npc__desc">Cavaleiro de armadura em forma de cebola, sempre de bom humor, mesmo diante do fim do mundo.</p>
+            </div>
+          </article>
+
+          <article class="npc">
+            <div class="npc__frame">
+              <img class="npc__img" src="assets/npcs-ds/solaire.webp" alt="Solaire de Astora, cavaleiro de elmo prateado e túnica com o símbolo do sol" width="720" height="900" loading="lazy" decoding="async">
+            </div>
+            <div class="npc__body">
+              <p class="npc__game ds">Dark Souls</p>
+              <h4 class="npc__name">Solaire de Astora</h4>
+              <p class="npc__role">Cavaleiro do Sol</p>
+              <p class="npc__desc">Devoto do Sol, procura o seu próprio sol e é o melhor amigo que um Morto-Vivo pode ter. Louvado seja o Sol!</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="npc-group">
+        <h3 class="group-title group-title--er">Elden Ring</h3>
+        <div class="npcs">
+
+          <article class="npc">
+            <div class="npc__frame">
+              <img class="npc__img" src="assets/npcs-er/blaidd.webp" alt="Blaidd, o Meio-Lobo, com rosto de lobo e uma espada às costas" width="400" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="npc__body">
+              <p class="npc__game er">Elden Ring</p>
+              <h4 class="npc__name">Blaidd</h4>
+              <p class="npc__role">O Meio-Lobo</p>
+              <p class="npc__desc">Cavaleiro meio-lobo a serviço de Ranni: aliado leal, de poucas palavras e muita lâmina.</p>
+            </div>
+          </article>
+
+          <article class="npc">
+            <div class="npc__frame">
+              <img class="npc__img" src="assets/npcs-er/alexander.webp" alt="Alexander, o Guerreiro Jarro: um enorme jarro de cerâmica gravada, semienterrado no chão" width="690" height="863" loading="lazy" decoding="async">
+            </div>
+            <div class="npc__body">
+              <p class="npc__game er">Elden Ring</p>
+              <h4 class="npc__name">Alexander</h4>
+              <p class="npc__role">Punho de Ferro</p>
+              <p class="npc__desc">Um guerreiro-jarro que só quer encontrar uma luta digna — e um Maculado disposto a ajudar.</p>
+            </div>
+          </article>
+
+          <article class="npc">
+            <div class="npc__frame">
+              <img class="npc__img" src="assets/npcs-er/shabriri.webp" alt="Shabriri, figura de chapéu cônico metálico, cobrindo o rosto com a mão" width="400" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="npc__body">
+              <p class="npc__game er">Elden Ring</p>
+              <h4 class="npc__name">Shabriri</h4>
+              <p class="npc__role">Profeta da Chama Frenética</p>
+              <p class="npc__desc">Com palavras doces, oferece ao Maculado a salvação por meio de um mundo reduzido a cinzas.</p>
+            </div>
+          </article>
+
+          <article class="npc">
+            <div class="npc__frame">
+              <img class="npc__img" src="assets/npcs-er/ranni.webp" alt="Ranni, a Bruxa, com chapéu de rendas e rosto azulado iluminado por uma luz gélida" width="656" height="820" loading="lazy" decoding="async">
+            </div>
+            <div class="npc__body">
+              <p class="npc__game er">Elden Ring</p>
+              <h4 class="npc__name">Ranni</h4>
+              <p class="npc__role">A Bruxa</p>
+              <p class="npc__desc">Semideusa que renunciou ao Anel Prístino e sonha com uma nova Era das Estrelas.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- DESCANSE À FOGUEIRA -->
+  <section class="section section--dark" id="rest">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>Descanse à Fogueira</h2>
+        <p>Acenda a chama. Aqui, por um instante, nada te persegue.</p>
+      </div>
+
+      <div class="bonfire" id="bonfire">
+        <div class="bonfire__stage">
+          <div class="bonfire__figure">
+            <div class="bonfire__glow" aria-hidden="true"></div>
+            <div class="bonfire__frame" aria-hidden="true">
+              <video class="bonfire__video" muted loop playsinline disablepictureinpicture preload="metadata" tabindex="-1" poster="assets/bonfire/bonfire-poster.webp">
+                <source src="assets/bonfire/bonfire.webm" type="video/webm">
+                <source src="assets/bonfire/bonfire.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bonfire__sparks" aria-hidden="true"></div>
+          </div>
+          <div class="bonfire__banner" aria-hidden="true"><span>Fogueira acesa</span></div>
+        </div>
+
+        <p class="bonfire__status" id="restStatus" role="status">Fogueira apagada</p>
+        <div class="bonfire__actions">
+          <button class="btn btn--rest" id="restBtn">Descansar</button>
+          <button class="btn btn--danger" id="dieBtn">Testar a morte</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- OS ESCOLHIDOS (protagonistas) -->
+  <section class="section" id="heroes">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>Os Escolhidos</h2>
+        <p>Dois sem-nome, duas eras, uma única escolha: erguer-se mais uma vez.</p>
+      </div>
+
+      <div class="heroes">
+        <article class="hero-card hero-card--ds">
+          <img class="hero-card__img" src="assets/heroes/chosen-undead.webp" alt="O Escolhido Morto-Vivo, cavaleiro de elmo aberto empunhando uma espada em chamas" width="900" height="1125" loading="lazy" decoding="async">
+          <div class="hero-card__body">
+            <p class="hero-card__game ds">Dark Souls · 2011</p>
+            <h3 class="hero-card__name">Escolhido <span class="nowrap">Morto-Vivo</span></h3>
+            <p class="hero-card__quote">“Da cela do Asilo ao trono da Chama, morreu mil vezes — e mil vezes escolheu se levantar.”</p>
+          </div>
+        </article>
+
+        <div class="heroes__sigil" aria-hidden="true">✦</div>
+
+        <article class="hero-card hero-card--er">
+          <img class="hero-card__img" src="assets/heroes/tarnished.webp" alt="O Maculado, em close, de elmo e armadura gasta, empunhando uma arma curta entre folhas douradas" width="576" height="720" loading="lazy" decoding="async">
+          <div class="hero-card__body">
+            <p class="hero-card__game er">Elden Ring · 2022</p>
+            <h3 class="hero-card__name">Maculado</h3>
+            <p class="hero-card__quote">“Guiado por uma graça esquecida, atravessa deuses caídos para tornar-se Senhor Prístino.”</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="footer__flame" aria-hidden="true">✦</div>
+    <p class="footer__line">Fogueiras acesas nesta visita: <b id="bonfireCountFoot">0</b></p>
+    <p class="footer__sub">“Não há vergonha em rolar.” — sabedoria ancestral do Morto-Vivo</p>
+    <p class="footer__credit">Landing page de homenagem feita por <span class="name">[seu nome aqui]</span> · Dark Souls e Elden Ring são propriedade da FromSoftware / Bandai Namco.<br>Vídeo da fogueira: <a href="https://commons.wikimedia.org/wiki/File:Campfire_video_2.webm" target="_blank" rel="noopener">Virginia State Parks</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>, via Wikimedia Commons.</p>
+  </footer>
+
+  <!-- YOU DIED -->
+  <div class="died" id="died" aria-hidden="true">
+    <span class="died__text">You Died</span>
+    <span class="died__hint">clique ou pressione ESC para continuar</span>
+  </div>
+
+  <!-- GSAP + ScrollTrigger (animações de scroll) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

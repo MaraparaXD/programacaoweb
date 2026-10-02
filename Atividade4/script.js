@@ -1,4 +1,3 @@
-// base cad-a7k9
 // aluno: Tiago Marapara Leão
 const CHAVE = "filmes";
 

@@ -9,6 +9,8 @@ Aplicação Web que consome a API pública [DummyJSON](https://dummyjson.com/doc
 | Nome | Matrícula |
 |---|---|
 | Tiago Marapara Leão | 2024013680 |
+|---|---|
+| Sander Alex de Amorim Feitosa| 2024004804 |
 
 ## Funcionalidades
 

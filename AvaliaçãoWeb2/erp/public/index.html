@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini ERP | Gestão comercial</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand"><span class="brand-icon">E</span><div>Mini ERP<small>Gestão comercial</small></div></div>
+        <nav aria-label="Navegação principal">
+            <a href="#painel">Visão geral</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#movimentacoes">Movimentações</a>
+        </nav>
+        <small class="sidebar-footer">Projeto acadêmico · Programação Web</small>
+    </aside>
+    <main>
+        <header id="painel" class="page-header">
+            <div><p class="eyebrow">GESTÃO DE ESTOQUE E VENDAS</p><h1>Visão geral</h1><p>Consulte os indicadores e acompanhe seus produtos.</p></div>
+            <span class="status" id="conexao" role="status">Conectando…</span>
+        </header>
+        <div class="metrics">
+            <article><span>Produtos cadastrados</span><strong id="total-produtos">—</strong></article>
+            <article><span>Unidades em estoque</span><strong id="total-unidades">—</strong></article>
+            <article><span>Estoque baixo</span><strong id="total-baixo">—</strong></article>
+            <article><span>Receita de vendas</span><strong id="total-vendas">—</strong></article>
+        </div>
+        <p id="mensagem" role="status" aria-live="polite" hidden></p>
+        <section id="produtos" class="panel">
+            <div class="panel-head"><div><h2>Produtos</h2><p>Catálogo e disponibilidade em estoque.</p></div><span class="tag">Cadastro em preparação</span></div>
+            <form id="form-busca" class="search" role="search">
+                <label for="busca">Buscar produto</label><div class="inline"><input id="busca" placeholder="Nome ou categoria" disabled><button disabled>Buscar</button></div>
+            </form>
+            <div class="table-wrap"><table><thead><tr><th>Produto</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Status</th><th>Ações</th></tr></thead><tbody id="lista-produtos"></tbody></table></div>
+            <details class="form-panel">
+                <summary>Formulário de produto (em preparação)</summary>
+                <form id="form-produto" class="fields">
+                    <input type="hidden" id="produto-id">
+                    <label>Nome<input id="nome" required maxlength="120"></label>
+                    <label>Categoria<select id="categoria" required><option value="">Selecione</option></select></label>
+                    <label>Preço (R$)<input id="preco" type="number" min="0.01" step="0.01" required></label>
+                    <label>Estoque inicial<input id="estoque" type="number" min="0" step="1" required></label>
+                    <label>Estoque mínimo<input id="estoque-minimo" type="number" min="0" step="1" required></label>
+                    <div class="form-actions"><button id="salvar-produto" disabled>Salvar produto</button><button type="reset" class="secondary">Limpar</button></div>
+                </form>
+            </details>
+        </section>
+        <section id="movimentacoes" class="panel">
+            <div class="panel-head"><div><h2>Movimentações</h2><p>Histórico de entradas e vendas.</p></div><span class="tag">Registro em preparação</span></div>
+            <details class="form-panel"><summary>Registrar movimentação (em preparação)</summary>
+                <form id="form-movimento" class="fields">
+                    <label>Produto<select id="mov-produto" required><option value="">Selecione</option></select></label>
+                    <label>Tipo<select id="mov-tipo"><option value="entrada">Entrada</option><option value="venda">Venda</option></select></label>
+                    <label>Quantidade<input id="mov-quantidade" type="number" min="1" step="1" required></label>
+                    <div class="form-actions"><button id="salvar-movimento" disabled>Registrar</button></div>
+                </form>
+            </details>
+            <div class="table-wrap"><table><thead><tr><th>Produto</th><th>Tipo</th><th>Quantidade</th><th>Valor unitário</th><th>Data (UTC)</th></tr></thead><tbody id="lista-movimentos"></tbody></table></div>
+        </section>
+        <footer>Mini ERP · Versão acadêmica em desenvolvimento</footer>
+    </main>
+</body>
+</html>

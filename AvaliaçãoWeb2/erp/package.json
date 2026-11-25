@@ -1,0 +1,12 @@
+{
+  "name": "erp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ERP acadêmico de estoque e vendas",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "banco": "node banco.js",
+    "start": "node servidor.js",
+    "test": "node --test"
+  }
+}
